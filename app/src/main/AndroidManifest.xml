@@ -23,13 +23,24 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MyActivity"
             android:exported="false">
+        </activity>
+        <activity
+            android:name=".CollectionActivity"
+            android:exported="true" >
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".DebugActivity"
+            android:exported="true">
         </activity>
     </application>
 
