@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "LufickJavaTraining"
 include ':app'
 include ':java_lib'
+include ':lib'
