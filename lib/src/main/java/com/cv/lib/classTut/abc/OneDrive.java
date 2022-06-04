@@ -1,4 +1,4 @@
-package com.cv.lib.abc;
+package com.cv.lib.classTut.abc;
 
 public class OneDrive extends CloudFileSystem{
     public OneDrive(int size, String name, String type, long createdTime, boolean isConnectionAvailable, boolean isUploadedSomeTimeBefore, int noOfDownloads) {
@@ -8,6 +8,21 @@ public class OneDrive extends CloudFileSystem{
 
     @Override
     public void copy() {
+
+    }
+
+    @Override
+    public void doWork(int a) {
+
+    }
+
+    @Override
+    public void doWork(float a) {
+
+    }
+
+    @Override
+    public void doWork(int a, String b) {
 
     }
 

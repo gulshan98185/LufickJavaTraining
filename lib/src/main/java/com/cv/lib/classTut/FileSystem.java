@@ -1,4 +1,4 @@
-package com.cv.lib;
+package com.cv.lib.classTut;
 
 abstract public class FileSystem{
     private int size;
@@ -25,6 +25,10 @@ abstract public class FileSystem{
     public long getCreatedTime() {
         return createdTime;
     }
+
+    public abstract void doWork(int a);
+    public abstract void doWork(float a);
+    public abstract void doWork(int a, String b);
 
     public FileSystem(int size, String name, String type, long createdTime){
         this.name = name;

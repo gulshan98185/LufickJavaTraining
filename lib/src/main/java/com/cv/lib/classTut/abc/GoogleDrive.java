@@ -1,4 +1,4 @@
-package com.cv.lib.abc;
+package com.cv.lib.classTut.abc;
 
 public class GoogleDrive extends CloudFileSystem{
     @Override
@@ -17,6 +17,22 @@ public class GoogleDrive extends CloudFileSystem{
     public void copy() {
 
     }
+
+    @Override
+    public void doWork(int a) {
+
+    }
+
+    @Override
+    public void doWork(float a) {
+
+    }
+
+    @Override
+    public void doWork(int a, String b) {
+
+    }
+
 
     @Override
     protected void run() {

@@ -1,4 +1,4 @@
-package com.cv.lib.abc;
+package com.cv.lib.classTut.abc;
 
 public class ExamplePackageClass {
     public static void main(String[] args) {
