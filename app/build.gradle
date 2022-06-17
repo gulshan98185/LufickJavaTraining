@@ -35,7 +35,7 @@ dependencies {
     implementation "com.mikepenz:iconics-core:3.1.0@aar"
     implementation "com.mikepenz:iconics-views:3.1.0"
     implementation 'com.mikepenz:google-material-typeface:3.0.1.3.original@aar'
-
+    implementation 'com.google.code.gson:gson:2.8.5'
 
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
