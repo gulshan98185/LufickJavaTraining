@@ -11,8 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LufickJavaTraining">
         <activity
+            android:name=".fastadapter.selection_multiselection.SelectionItemActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Database.DevelopersActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,22 +31,20 @@
         <activity
             android:name=".fastadapter.FastAdapterActivity"
             android:exported="true"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".call_back.ThirdActivity"
             android:exported="false" />
         <activity
             android:name=".Database.BasicDatabaseActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".call_back.SeconndActivity"
             android:exported="false" />
         <activity
             android:name=".call_back.FirstActivity"
             android:exported="true"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".MyActivity"
             android:exported="false" />

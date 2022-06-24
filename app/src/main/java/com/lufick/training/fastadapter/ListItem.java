@@ -3,8 +3,10 @@ package com.lufick.training.fastadapter;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.lufick.training.R;
 import com.mikepenz.fastadapter.FastAdapter;
@@ -17,7 +19,7 @@ import java.util.List;
 
 public class ListItem extends AbstractItem<ListItem, ListItem.ListViewHolder> {
 
-    DATA data;
+    public DATA data;
 
     public ListItem(DATA data){
         this.data = data;
@@ -46,25 +48,32 @@ public class ListItem extends AbstractItem<ListItem, ListItem.ListViewHolder> {
     static class ListViewHolder extends FastAdapter.ViewHolder<ListItem>{
         IconicsImageView icon;
         TextView title, subtitle;
+        ConstraintLayout parentLayout;
         public ListViewHolder(View itemView) {
             super(itemView);
             icon = itemView.findViewById(R.id.icon);
             title = itemView.findViewById(R.id.title);
             subtitle = itemView.findViewById(R.id.sub_title);
+            parentLayout = itemView.findViewById(R.id.list_item);
         }
 
         @Override
         public void bindView(ListItem item, List payloads) {
+            if (item.isSelected()){
+                parentLayout.setBackgroundColor(Color.GREEN);
+            }else {
+                parentLayout.setBackgroundColor(0);
+            }
             title.setText(item.data.title);
             subtitle.setText(item.data.subtitle);
             IconicsDrawable drawable = new IconicsDrawable(itemView.getContext(), item.data.iconName);
-            if (item.data==DATA.NEERAJ){
+            /*if (item.data==DATA.NEERAJ){
                 drawable = drawable.color(Color.RED).alpha(100);
             }else if (item.data==DATA.ABAC){
                 drawable = drawable.color(Color.BLUE);
             }else {
                 drawable = drawable.color(Color.RED);
-            }
+            }*/
             icon.setImageDrawable(drawable);
         }
 
