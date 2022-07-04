@@ -76,7 +76,7 @@ public class FastAdapterActivity extends AppCompatActivity {
 //        itemList.add(new HeaderItem("This is 5th header"));
 
         for (DATA data : DATA.values()){
-            itemList.add(new ListItem(data));
+//            itemList.add(new ListItem(data));
         }
 
         itemAdapter.setNewList(itemList);

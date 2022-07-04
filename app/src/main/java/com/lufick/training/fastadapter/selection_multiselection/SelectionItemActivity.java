@@ -101,11 +101,11 @@ public class SelectionItemActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(fastAdapter);
         itemList = new ArrayList<>();
-        itemList.add(new HeaderItem("Header"));
+//        itemList.add(new HeaderItem("Header"));
         for (DATA data : DATA.values()){
-            itemList.add(new ListItem(data));
+//            itemList.add(new ListItem(data));
         }
-        itemList.add(new HeaderItem("Footer"));
+//        itemList.add(new HeaderItem("Footer"));
         itemAdapter.setNewList(itemList);
     }
 

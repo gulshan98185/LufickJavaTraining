@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.lufick.training.R;
+import com.lufick.training.call_back.MyCallBack;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.items.AbstractItem;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -17,9 +18,11 @@ import java.util.List;
 public class HeaderItem extends AbstractItem<HeaderItem, HeaderItem.ListViewHolder> {
 
     String title;
+    MyCallBack callBack;
 
-    public HeaderItem(String title){
+    public HeaderItem(String title, MyCallBack callBack){
         this.title = title;
+        this.callBack = callBack;
     }
 
     @NonNull
@@ -48,6 +51,12 @@ public class HeaderItem extends AbstractItem<HeaderItem, HeaderItem.ListViewHold
         @Override
         public void bindView(HeaderItem item, List payloads) {
             title.setText(item.title);
+            title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    item.callBack.click(getAdapterPosition());
+                }
+            });
         }
 
         @Override

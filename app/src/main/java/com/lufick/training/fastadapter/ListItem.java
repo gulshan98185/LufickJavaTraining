@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.lufick.training.R;
+import com.lufick.training.call_back.CallbackUsage;
+import com.lufick.training.call_back.MyCallBack;
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.items.AbstractItem;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -20,9 +22,11 @@ import java.util.List;
 public class ListItem extends AbstractItem<ListItem, ListItem.ListViewHolder> {
 
     public DATA data;
+    public CallbackUsage callBack;
 
-    public ListItem(DATA data){
+    public ListItem(DATA data, CallbackUsage callBack){
         this.data = data;
+        this.callBack = callBack;
     }
 
 //    public void changeTitle(String newTitle){
@@ -74,6 +78,18 @@ public class ListItem extends AbstractItem<ListItem, ListItem.ListViewHolder> {
             }else {
                 drawable = drawable.color(Color.RED);
             }*/
+            parentLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    item.callBack.click(getAdapterPosition());
+                }
+            });
+            icon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    item.callBack.clickItem(item.data.title);
+                }
+            });
             icon.setImageDrawable(drawable);
         }
 
