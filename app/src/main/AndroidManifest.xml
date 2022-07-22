@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lufick.training">
+    package="com.lufick.training" >
 
     <application
         android:name=".MyApplication"
@@ -9,10 +9,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LufickJavaTraining">
+        android:theme="@style/Theme.LufickJavaTraining" >
+        <activity
+            android:name=".saved_instance_state.EndActivity"
+            android:exported="false"
+            android:label="@string/title_activity_end"
+            android:theme="@style/Theme.LufickJavaTraining.NoActionBar" />
+        <activity
+            android:name=".saved_instance_state.StarterActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".saved_instance_state.ActivityOne"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,8 +38,7 @@
             android:exported="false" />
         <activity
             android:name=".shared_preference.SharedPreferenceActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".fastadapter.selection_multiselection.SelectionItemActivity"
             android:exported="true" />
@@ -54,7 +67,7 @@
             android:exported="false" />
         <activity
             android:name=".CollectionActivity"
-            android:exported="true">
+            android:exported="true" >
 
             <!--
             <intent-filter>
