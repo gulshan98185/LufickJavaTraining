@@ -16,3 +16,4 @@ rootProject.name = "LufickJavaTraining"
 include ':app'
 include ':java_lib'
 include ':lib'
+include ':java_training_march_2023'
