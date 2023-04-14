@@ -11,13 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LufickJavaTraining">
         <activity
-            android:name=".collections.CollectionsActivity"
+            android:name=".training_march_2023.fastadapter.March2023FastAdapterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".collections.CollectionsActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".saved_instance_state.EndActivity"
@@ -26,20 +30,16 @@
         <activity
             android:name=".saved_instance_state.StarterActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".saved_instance_state.ActivityOne"
             android:exported="true">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".shared_preference.ShowDetails"
