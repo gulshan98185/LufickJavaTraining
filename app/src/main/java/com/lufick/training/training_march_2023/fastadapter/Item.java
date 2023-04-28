@@ -1,5 +1,6 @@
 package com.lufick.training.training_march_2023.fastadapter;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
@@ -46,6 +47,11 @@ public class Item extends AbstractItem<Item, Item.ViewHolder> {
 
         @Override
         public void bindView(Item item, List<Object> payloads) {
+            if(item.isSelected()){
+                titleTextView.setTextColor(Color.CYAN);
+            }else {
+                titleTextView.setTextColor(Color.BLACK);
+            }
             titleTextView.setText(item.title);
         }
 
