@@ -10,77 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LufickJavaTraining">
-        <activity
-            android:name=".training_march_2023.fastadapter.March2023FastAdapterActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".collections.CollectionsActivity"
-            android:exported="true">
 
-        </activity>
-        <activity
-            android:name=".saved_instance_state.EndActivity"
-            android:exported="false"
-            android:theme="@style/Theme.LufickJavaTraining.NoActionBar" />
-        <activity
-            android:name=".saved_instance_state.StarterActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".saved_instance_state.ActivityOne"
-            android:exported="true">
-            <!--<intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
-        </activity>
-        <activity
-            android:name=".shared_preference.ShowDetails"
-            android:exported="false" />
-        <activity
-            android:name=".shared_preference.SharedPreferenceActivity"
-            android:exported="true" />
-        <activity
-            android:name=".fastadapter.selection_multiselection.SelectionItemActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Database.DevelopersActivity"
-            android:exported="true" />
-        <activity
-            android:name=".fastadapter.FastAdapterActivity"
-            android:exported="true"
-            android:label="@string/app_name" />
-        <activity
-            android:name=".Database.BasicDatabaseActivity"
-            android:exported="true" />
-        <activity
-            android:name=".call_back.FirstActivity"
-            android:exported="false"
-            android:label="@string/app_name" />
         <activity
             android:name=".MyActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CollectionActivity"
             android:exported="true">
-
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
-        <activity
-            android:name=".DebugActivity"
-            android:exported="true" />
+
     </application>
 
 </manifest>
