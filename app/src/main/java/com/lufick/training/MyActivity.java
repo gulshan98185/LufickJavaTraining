@@ -14,9 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mikepenz.fastadapter.FastAdapter;
 import com.mikepenz.fastadapter.IAdapter;
+import com.mikepenz.fastadapter.ISelectionListener;
 import com.mikepenz.fastadapter.adapters.ItemAdapter;
+import com.mikepenz.fastadapter.items.AbstractItem;
 import com.mikepenz.fastadapter.listeners.OnClickListener;
 import com.mikepenz.fastadapter.listeners.OnLongClickListener;
+import com.mikepenz.fastadapter.select.SelectExtension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +29,9 @@ import bolts.Task;
 
 public class MyActivity extends AppCompatActivity {
     RecyclerView recyclerView;
-    FastAdapter<MyItem>  fastAdapter;
-    ItemAdapter<MyItem>  itemItemAdapter;
+    FastAdapter<AbstractItem>  fastAdapter;
+    ItemAdapter<AbstractItem>  itemItemAdapter;
+    SelectExtension<AbstractItem> selectExtension;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,29 +40,54 @@ public class MyActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view);
         itemItemAdapter = ItemAdapter.items();
         fastAdapter =  FastAdapter.with(itemItemAdapter);
+        fastAdapter.withSelectOnLongClick(true);
+        fastAdapter.withSelectable(true);
+        fastAdapter.withSelectWithItemUpdate(true);
+        fastAdapter.withAllowDeselection(true);
+        fastAdapter.withMultiSelect(true);
+        selectExtension = fastAdapter.getExtension(SelectExtension.class);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(fastAdapter);
 
-        List<MyItem> listOfItems = new ArrayList<>();
+
+        List<AbstractItem> listOfItems = new ArrayList<>();
         for (int i = 0; i <50; i++) {
+            if(i%5==0){
+                listOfItems.add(new Header("Header title " + (i+1)));
+            }
             listOfItems.add(new MyItem("List item no "+(i+1)));
         }
         itemItemAdapter.setNewList(listOfItems);
 
-        fastAdapter.withOnClickListener(new OnClickListener<MyItem>() {
+        fastAdapter.withOnClickListener(new OnClickListener<AbstractItem>() {
             @Override
-            public boolean onClick(View v, IAdapter<MyItem> adapter, MyItem item, int position) {
-                //Toast.makeText(MyActivity.this, "Clicked item is "+position + " name "+item.getName(), Toast.LENGTH_SHORT).show();
+            public boolean onClick(View v, IAdapter<AbstractItem> adapter, AbstractItem item, int position) {
+                if(item instanceof MyItem){
+                    if(selectExtension.getSelectedItems().size()>0){
+                        if(!item.isSelected()) {
+                            selectExtension.select(position);
+                        }else {
+                            selectExtension.deselect(position);
+                        }
+                    }
+                }
                 return false;
             }
         });
-
-        fastAdapter.withOnLongClickListener(new OnLongClickListener<MyItem>() {
+        selectExtension.withSelectionListener(new ISelectionListener<AbstractItem>() {
             @Override
-            public boolean onLongClick(View v, IAdapter<MyItem> adapter, MyItem item, int position) {
-                Toast.makeText(MyActivity.this, "Clicked item is "+position + " name "+item.getName(), Toast.LENGTH_SHORT).show();
-                return false;
+            public void onSelectionChanged(AbstractItem item, boolean selected) {
+                if(selectExtension.getSelectedItems().size()>0){
+                    //show delete icon
+                }else {
+                    // hide delete icon
+                }
+                if (item.isSelected()) {
+                    Toast.makeText(MyActivity.this, "Selected", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(MyActivity.this, "DeSelected", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
