@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel target="1.7">
       <module name="LufickJavaTraining.app" target="17" />
+      <module name="LufickJavaTraining.java_training" target="1.8" />
+      <module name="LufickJavaTraining.java_training.main" target="1.8" />
+      <module name="LufickJavaTraining.java_training.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
