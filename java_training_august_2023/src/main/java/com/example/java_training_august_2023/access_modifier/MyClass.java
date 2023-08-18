@@ -1,4 +1,4 @@
-package com.example.java_training_august_2023;
+package com.example.java_training_august_2023.access_modifier;
 
 import com.example.java_training_august_2023.access_modifier.basic.Book;
 
