@@ -11,21 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LufickJavaTraining">
         <activity
-            android:name=".callback.SecondActivity"
-            android:exported="false" />
-        <activity
-            android:name=".callback.FirstActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".MyActivity"
-            android:exported="true">
+            android:name=".fastadapter.FastAdapterActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:label="FastAdapter"
+            android:name=".callback.SecondActivity"
+            android:exported="false" />
+        <activity
+            android:name=".callback.FirstActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".MyActivity"
+            android:exported="true">
+
         </activity>
     </application>
 
