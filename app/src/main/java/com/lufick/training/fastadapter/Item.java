@@ -1,9 +1,11 @@
 package com.lufick.training.fastadapter;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.lufick.training.R;
 import com.mikepenz.fastadapter.FastAdapter;
@@ -30,7 +32,7 @@ public class Item extends AbstractItem<Item, Item.ViewHolder> {
 
     @Override
     public int getType() {
-        return 0;
+        return R.id.list_item;
     }
 
     @Override
@@ -40,16 +42,23 @@ public class Item extends AbstractItem<Item, Item.ViewHolder> {
 
     class ViewHolder extends FastAdapter.ViewHolder<Item>{
         public TextView textViewTitle, textViewSubTitle;
+        ConstraintLayout constraintLayout;
         public ViewHolder(View itemView) {
             super(itemView);
             textViewTitle = itemView.findViewById(R.id.title);
             textViewSubTitle = itemView.findViewById(R.id.sub_title);
+            constraintLayout = itemView.findViewById(R.id.list_item);
         }
 
         @Override
         public void bindView(Item item, List<Object> payloads) {
             textViewTitle.setText(item.title);
             textViewSubTitle.setText("SubTitle");
+            if(item.isSelected()){
+                constraintLayout.setBackgroundColor(Color.RED);
+            }else {
+                constraintLayout.setBackgroundColor(Color.parseColor("#E3E0E0"));
+            }
         }
 
         @Override
