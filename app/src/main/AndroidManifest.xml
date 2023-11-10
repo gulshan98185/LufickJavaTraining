@@ -11,8 +11,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LufickJavaTraining">
         <activity
-            android:name=".fastadapter.FastAdapterActivity"
-            android:exported="true" >
+            android:name=".send_data_to_other_activity.EndActivity"
+            android:exported="false" />
+        <activity
+            android:name=".send_data_to_other_activity.StartActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,17 +23,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="FastAdapter"
+            android:name=".fastadapter.FastAdapterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".callback.SecondActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="FastAdapter" />
         <activity
             android:name=".callback.FirstActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".MyActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
